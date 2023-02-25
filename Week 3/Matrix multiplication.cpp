@@ -1,3 +1,4 @@
+//T.C-->O(N^3) (PROVIDED THAT THE ROW OF 1ST MATRIX AND THE COLUMN OF 2ND MATRIX IS OF THE SAME DIMENSION).
 #include<iostream>
 using namespace std;
 
