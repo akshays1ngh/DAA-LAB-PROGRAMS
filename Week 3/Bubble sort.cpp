@@ -1,3 +1,6 @@
+
+//BEST CASE T.C--> O(N)..(WHEN THE ARRAY IS ALREADY SORTED)
+//WORST CASE T.C--> O(N^2) 
 #include<iostream>
 using namespace std;
 
