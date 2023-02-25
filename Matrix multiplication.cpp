@@ -4,6 +4,7 @@ using namespace std;
 int main(){
 	
 	int r1,c1,r2,c2,i,j,k;
+	//READ THE DIMENSIONS
 	cout<<"Enter the order of matrix 1"<<endl;
 	cin>>r1>>c1;
 
@@ -16,6 +17,7 @@ int main(){
 		cout<<"Not possible: "<<endl;
 		exit(0);
 	}
+	
 	cout<<"Enter matrix 1 elements: "<<endl;
 	for(i=0;i<r1;i++){
 		for(j=0;j<c1;j++){
@@ -31,6 +33,7 @@ int main(){
 	}
 	cout<<"Resultant matrix is: "<<endl;
 	
+	//MULTIPLICATION PART
 	int mult[r1][c2]={0};
 	for(i=0;i<r1;i++){
 		for(j=0;j<c1;j++){
