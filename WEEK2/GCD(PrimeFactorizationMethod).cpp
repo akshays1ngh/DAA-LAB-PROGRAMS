@@ -25,7 +25,7 @@ int main(){
 	int max=a>b?a:b;
 	int min=a<b?a:b;
 	
-	for(int i=2;i<=max;i++){
+	for(int i=2;i<=min;i++){
 		while(isprime(i) && max%i==0 && min%i==0){
 			gcd=gcd*i;	
 			max/=i;		
