@@ -36,9 +36,9 @@ int main(){
 	//MULTIPLICATION PART
 	int mult[r1][c2]={0};
 	for(i=0;i<r1;i++){
-		for(j=0;j<c1;j++){
+		for(j=0;j<c2;j++){
 			mult[i][j]=0;
-			for(k=0;k<r1;k++){
+			for(k=0;k<c1;k++){
 				mult[i][j]+=mat1[i][k]*mat2[k][j];
 			}
 		}
