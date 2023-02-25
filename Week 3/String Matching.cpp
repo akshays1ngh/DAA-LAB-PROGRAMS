@@ -1,3 +1,4 @@
+//T.C--> O(N*M) (WHERE N IS THE LENGTH OF THE TEXT AND M IS THE LENGTH OF THE PATTERN) 
 #include<bits/stdc++.h>
 using namespace std;
 
