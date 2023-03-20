@@ -2,20 +2,20 @@
 
 using namespace std;
 int adj_mat[100][100];
-void topodfs(int node,int n,int mat[100][100],int vis[],stack<int>&st){
+void topodfs(int node,int n,int mat[100][100],int vis[],int st[],int &top){
     vis[node]=1;
-
+    
     for(int i=0;i<n;i++){
         if(adj_mat[node][i]==1 && !vis[i])
-            topodfs(i,n,mat,vis,st);
+            topodfs(i,n,mat,vis,st,top);
     }
-    st.push(node);
+    st[++top]=node;
 }
 int main()
 {
     int n;
     cin>>n;
-
+    
     for(int i=0;i<n;i++)
         for(int j=0;j<n;j++)
             adj_mat[i][j]=0;
@@ -35,16 +35,15 @@ int main()
             adj_mat[u][v]=1;
         }
     }
-    stack<int>st;
+    int st[n],top=-1;
     int vis[n]={0};
     for(int i=0;i<n;i++){
         if(!vis[i])
-            topodfs(i,n,adj_mat,vis,st);
+            topodfs(i,n,adj_mat,vis,st,top);
     }
     cout<<"Topological dfs order is: "<<endl;
-    while(!st.empty()){
-        cout<<st.top()<<" ";
-        st.pop();
+    while(top!=-1){
+        cout<<st[top--]<<" ";
     }
     return 0;
 }
