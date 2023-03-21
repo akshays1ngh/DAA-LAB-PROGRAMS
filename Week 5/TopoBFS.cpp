@@ -34,24 +34,36 @@ int main()
                 indegree[j]++;
         }
     }
-    //topological sort bfs
-    queue<int>q;
+    int q[n],front=-1,rear=-1;
     for(int i=0;i<n;i++){
-        if(indegree[i]==0)
-            q.push(i);
+        if(indegree[i]==0){
+            if(front==-1 && rear==-1){
+                front=0;
+                rear=0;
+                q[front]=i;
+            }
+            else
+                q[++rear]=i;
+    }
     }
     cout<<"Topological sorted order in bfs is:"<<endl;
-    while(!q.empty()){
-        int node=q.front();
+    while(front<=rear){
+        int node=q[front++];
         cout<<node<<" ";
-        q.pop();
         for(int i=0;i<n;i++){
             if(adj_mat[node][i]==1){
                 indegree[i]--;
-                if(indegree[i]==0)
-                    q.push(i);
+                if(indegree[i]==0){
+                    if(front==-1 && rear==-1){
+                        front=0;
+                        rear=0;
+                        q[front]=i;
+                    }
+                    else
+                        q[++rear]=i;
+            }
             }
         }
     }
-    return 0;
+    return 142;
 }
