@@ -18,7 +18,6 @@ void subset(int idx,int n,int wt[],int values[],int arr[],int target,int &ans,in
                 final[i]=wt[arr[i]];
         }
     }
-        k=0;
         return;
     }
     arr[k++]=idx;
