@@ -1,3 +1,4 @@
+//T.C--> O(V+E)
 #include<bits/stdc++.h>
 using namespace std;
 int mat[100][100];
@@ -26,7 +27,7 @@ int main(){
 		cout<<node<<" ";
 		for(int i=0;i<n;i++){
 			if(mat[node][i]==1 && !vis[i]){
-					q[++rear]=i;
+				q[++rear]=i;
 				vis[i]=1;
 			}
 		}
