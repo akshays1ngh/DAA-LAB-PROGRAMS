@@ -1,3 +1,4 @@
+//T.C--> O(NLOGN)
 #include<iostream>
 using namespace std;
 void display(int array[], int size) {
