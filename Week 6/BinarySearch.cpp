@@ -1,3 +1,5 @@
+//T.C--> O(LOGN) (When array is sorted)
+//worst case T>C--> O(logn)+O(nlogn) (When array is not sorted)
 #include<iostream>
 using namespace std;
 
