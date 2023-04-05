@@ -1,6 +1,5 @@
 #include <iostream>
-#include <vector>
-#include <queue>
+
 using namespace std;
 
 int main() {
@@ -11,8 +10,12 @@ int main() {
     cin >> k;
 
     // Initialize adjacency matrix and indegree array
-    vector<vector<int>> adj_mat(n, vector<int>(n, 0));
-    vector<int> indegree(n, 0);
+    //vector<vector<int>> adj_mat(n, vector<int>(n, 0));
+    int adj_mat[n][n];
+    for(int i=0;<n;i++)
+        for(int j=0;j<n;j++)
+            adj_mat[i][j]=0;
+    int indegree[n]= {0};
 
     // Input the dependencies
     for (int i = 0; i < k; i++) {
