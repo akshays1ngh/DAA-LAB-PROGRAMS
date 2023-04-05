@@ -10,9 +10,9 @@ int main() {
     cin >> k;
 
     // Initialize adjacency matrix and indegree array
-    //vector<vector<int>> adj_mat(n, vector<int>(n, 0));
+    
     int adj_mat[n][n];
-    for(int i=0;<n;i++)
+    for(int i=0;i<n;i++)
         for(int j=0;j<n;j++)
             adj_mat[i][j]=0;
     int indegree[n]= {0};
@@ -36,31 +36,37 @@ int main() {
             last_module = module;
         }
     }
-
-    // Topological sorting using Kahn's algorithm
-    queue<int> q;
-    for (int i = 0; i < n; i++) {
-        if (indegree[i] == 0) {
-            q.push(i);
-        }
+    int q[n],front=-1,rear=-1;
+    for(int i=0;i<n;i++){
+        if(indegree[i]==0){
+            if(front==-1 && rear==-1){
+                front=0;
+                rear=0;
+                q[front]=i;
+            }
+            else
+                q[++rear]=i;
     }
-
-    cout << "Task scheduling order is: ";
-    while (!q.empty()) {
-        int node = q.front();
-        q.pop();
-        cout << node << " ";
-        for (int i = 0; i < n; i++) {
-            if (adj_mat[node][i] == 1) {
+    }
+    cout<<"Task scheduling order is:"<<endl;
+    while(front<=rear){
+        int node=q[front++];
+        cout<<node<<" ";
+        for(int i=0;i<n;i++){
+            if(adj_mat[node][i]==1){
                 indegree[i]--;
-                if (indegree[i] == 0) {
-                    q.push(i);
-                }
+                if(indegree[i]==0){
+                    if(front==-1 && rear==-1){
+                        front=0;
+                        rear=0;
+                        q[front]=i;
+                    }
+                    else
+                        q[++rear]=i;
+            }
             }
         }
     }
-    cout << endl;
-
-    return 0;
+    return 142;
 }
 
