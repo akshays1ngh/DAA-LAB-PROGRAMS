@@ -39,7 +39,7 @@ int check(node* root,int &maxi){
 
         maxi=max(maxi,l+r);// maximum addition of left and right height at any node.
 
-        return 1+max(l,r);
+        return 1+maxi;
     }
 
 int main()
